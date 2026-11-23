@@ -1,0 +1,372 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hitarth Shah · ASIC &amp; Physical Design · ECE Engineer</title>
+  <meta name="description" content="Hitarth Shah — Electronics &amp; Communication Engineering student at VGEC, focused on ASIC and physical design. Verilog, synthesis, place-and-route, embedded systems, and a NASA Space Apps top-4 finish.">
+  <link rel="canonical" href="https://shahhitarth.github.io/">
+  <meta name="author" content="Hitarth Shah">
+  <meta name="theme-color" content="#0b0c10">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Hitarth Shah · ASIC &amp; Physical Design">
+  <meta property="og:description" content="ECE engineer focused on ASIC and physical design — projects, achievements, publications and more.">
+  <meta property="og:url" content="https://shahhitarth.github.io/">
+  <meta property="og:image" content="https://shahhitarth.github.io/assets/img/profile.webp">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="assets/img/logo.webp" type="image/webp">
+
+  <!-- Apply saved / system theme before first paint (prevents a flash) -->
+  <script>
+    (function () {
+      var t = null;
+      try { t = localStorage.getItem('theme'); } catch (e) {}
+      if (t !== 'light' && t !== 'dark') {
+        t = (window.matchMedia && matchMedia('(prefers-color-scheme: light)').matches) ? 'light' : 'dark';
+      }
+      document.documentElement.setAttribute('data-theme', t);
+      document.documentElement.classList.add('js');
+    })();
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Hitarth Shah",
+    "url": "https://shahhitarth.github.io/",
+    "jobTitle": "Electronics & Communication Engineering student",
+    "description": "ECE student focused on ASIC and physical design, embedded systems and digital hardware.",
+    "alumniOf": "Vishwakarma Government Engineering College, Ahmedabad",
+    "knowsAbout": ["ASIC design", "Physical design", "Verilog", "Embedded systems", "Synopsys Design Compiler", "IC Compiler 2"],
+    "sameAs": ["https://www.linkedin.com/in/shah-hitarth2", "https://github.com/Suizaka"]
+  }
+  </script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <!-- Icon sprite -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <defs>
+      <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></symbol>
+      <symbol id="i-moon" viewBox="0 0 24 24"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></symbol>
+      <symbol id="i-menu" viewBox="0 0 24 24"><path d="M3 7h18M3 12h18M3 17h18"/></symbol>
+      <symbol id="i-close" viewBox="0 0 24 24"><path d="M18 6L6 18M6 6l12 12"/></symbol>
+      <symbol id="i-github" viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.9a3.4 3.4 0 0 0-.9-2.6c3.1-.3 6.4-1.5 6.4-7A5.4 5.4 0 0 0 20 4.8 5.1 5.1 0 0 0 19.9 1S18.7.7 16 2.5a13.4 13.4 0 0 0-7 0C6.3.7 5.1 1 5.1 1A5.1 5.1 0 0 0 5 4.8a5.4 5.4 0 0 0-1.5 3.8c0 5.4 3.3 6.6 6.4 7a3.4 3.4 0 0 0-.9 2.6V22"/></symbol>
+      <symbol id="i-linkedin" viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2zM4 6a2 2 0 1 0 0-4 2 2 0 0 0 0 4z"/></symbol>
+      <symbol id="i-instagram" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.4A4 4 0 1 1 12.6 8 4 4 0 0 1 16 11.4zM17.5 6.5h.01"/></symbol>
+      <symbol id="i-mail" viewBox="0 0 24 24"><path d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"/><path d="M22 6l-10 7L2 6"/></symbol>
+      <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M7 17L17 7M8 7h9v9"/></symbol>
+      <symbol id="i-download" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></symbol>
+      <symbol id="i-play" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M10 8l6 4-6 4z"/></symbol>
+      <symbol id="i-code" viewBox="0 0 24 24"><path d="M16 18l6-6-6-6M8 6l-6 6 6 6"/></symbol>
+      <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20 15 15 0 0 1 0-20z"/></symbol>
+      <symbol id="i-pin" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></symbol>
+    </defs>
+  </svg>
+
+  <header class="site-header" id="top">
+    <div class="wrap nav">
+      <a class="brand" href="#home" aria-label="Hitarth Shah — home">
+        <span class="brand-mark">HS</span>
+        <span class="brand-name">Hitarth Shah</span>
+      </a>
+
+      <nav aria-label="Primary">
+        <ul class="nav-links" id="navLinks">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#achievements">Achievements</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#certifications">Certifications</a></li>
+          <li><a href="#publications">Publications</a></li>
+          <li><a href="#blogs">Blogs</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="icon-btn" id="themeToggle" type="button" aria-label="Switch colour theme" title="Switch theme">
+          <svg class="i i-sun" aria-hidden="true"><use href="#i-sun"/></svg>
+          <svg class="i i-moon" aria-hidden="true"><use href="#i-moon"/></svg>
+        </button>
+        <button class="icon-btn menu-btn" id="menuBtn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
+          <svg class="i i-menu" aria-hidden="true"><use href="#i-menu"/></svg>
+          <svg class="i i-close" aria-hidden="true"><use href="#i-close"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- ============ HOME ============ -->
+    <section class="hero" id="home">
+      <div class="wrap hero-grid">
+        <div class="hero-copy">
+          <span class="pill"><span class="dot"></span>Open to ASIC &amp; physical design opportunities</span>
+          <h1 class="name">Hitarth Shah</h1>
+          <p class="tagline">Designing silicon. Building systems that work.</p>
+          <p class="hero-text">
+            Electronics &amp; Communication Engineering student with a focus on ASIC design — from RTL and
+            synthesis to place-and-route — backed by hands-on embedded and analog hardware work.
+          </p>
+          <div class="cta-row">
+            <a class="btn btn-primary" href="#projects">View projects <svg class="i" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+            <a class="btn btn-ghost" href="#contact">Get in touch</a>
+            <a class="btn btn-link" id="resumeBtn" href="#" hidden download><svg class="i" aria-hidden="true"><use href="#i-download"/></svg> Résumé</a>
+          </div>
+          <dl class="stats">
+            <div><dt>9.11</dt><dd>CGPA at VGEC</dd></div>
+            <div><dt>4th</dt><dd>NASA Space Apps 2023</dd></div>
+            <div><dt>1</dt><dd>Indian patent filed</dd></div>
+            <div><dt>ISRO</dt><dd>Seminar paper</dd></div>
+          </dl>
+        </div>
+
+        <div class="hero-art" aria-hidden="true">
+          <svg viewBox="0 0 400 400" role="img" aria-label="Stylised chip die">
+  <defs>
+    <linearGradient id="dieFill" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="currentColor" stop-opacity=".16"/>
+      <stop offset="1" stop-color="currentColor" stop-opacity=".02"/>
+    </linearGradient>
+    <g id="side"><line class="die-pin" x1="108" y1="52" x2="108" y2="80"/><line class="die-pin" x1="134" y1="52" x2="134" y2="80"/><line class="die-pin" x1="160" y1="52" x2="160" y2="80"/><line class="die-pin" x1="186" y1="52" x2="186" y2="80"/><line class="die-pin" x1="212" y1="52" x2="212" y2="80"/><line class="die-pin" x1="238" y1="52" x2="238" y2="80"/><line class="die-pin" x1="264" y1="52" x2="264" y2="80"/><line class="die-pin" x1="290" y1="52" x2="290" y2="80"/><path class="die-trace" style="animation-delay:-0.00s" d="M108 80V96L130.0 112V130"/><path class="die-trace" style="animation-delay:-0.45s" d="M134 80V96L150.0 112V130"/><path class="die-trace" style="animation-delay:-0.90s" d="M160 80V96L170.0 112V130"/><path class="die-trace" style="animation-delay:-1.35s" d="M186 80V96L190.0 112V130"/><path class="die-trace" style="animation-delay:-1.80s" d="M212 80V96L210.0 112V130"/><path class="die-trace" style="animation-delay:-2.25s" d="M238 80V96L230.0 112V130"/><path class="die-trace" style="animation-delay:-2.70s" d="M264 80V96L250.0 112V130"/><path class="die-trace" style="animation-delay:-3.15s" d="M290 80V96L270.0 112V130"/></g>
+  </defs>
+  <use href="#side"/>
+  <use href="#side" transform="rotate(90 200 200)"/>
+  <use href="#side" transform="rotate(180 200 200)"/>
+  <use href="#side" transform="rotate(270 200 200)"/>
+  <rect class="die-body" x="80" y="80" width="240" height="240" rx="18"/>
+  <rect class="die-core" x="130" y="130" width="140" height="140" rx="10"/>
+  <rect class="die-core2" x="162" y="162" width="76" height="76" rx="8"/>
+  <circle cx="100" cy="100" r="3.5" fill="currentColor"/>
+  <text class="die-text" x="200" y="211" text-anchor="middle">HS</text>
+</svg>
+        </div>
+      </div>
+      <a class="scroll-cue" href="#about" aria-label="Scroll to About"><span></span></a>
+    </section>
+
+    <!-- ============ ABOUT ============ -->
+    <section class="section" id="about">
+      <div class="wrap">
+        <div class="sec-head reveal">
+          <span class="eyebrow">About me</span>
+          <h2>Where a spec becomes silicon.</h2>
+        </div>
+
+        <div class="about-grid">
+          <figure class="portrait reveal">
+            <img src="assets/img/profile.webp" alt="Portrait of Hitarth Shah" width="1050" height="1400" loading="lazy">
+          </figure>
+
+          <div class="about-copy reveal">
+            <p class="lead-strong">
+              I'm a third-year Electronics &amp; Communication Engineering student at Vishwakarma Government
+              Engineering College, Ahmedabad, specialising in ASIC and physical design.
+            </p>
+            <p>
+              I'm most at home where a design meets its constraints — synthesis, timing, floorplans and
+              place-and-route. I built that foundation on industry tools during a summer internship, and I keep
+              extending it on my own with open-source flows and Verilog projects.
+            </p>
+            <p>
+              Before chips, I built things by hand: ultrasonic radars, op-amp test kits, microcontroller security
+              systems and a solar-powered smart home. That habit of making something work end to end is what I bring
+              to a team — along with a placed fourth at NASA Space Apps, a nanosatellite payload concept presented to
+              SAC ISRO scientists, and a patent application.
+            </p>
+
+            <dl class="facts">
+              <div><dt>Based in</dt><dd>Ahmedabad, India</dd></div>
+              <div><dt>Focus</dt><dd>ASIC design · Physical design</dd></div>
+              <div><dt>Degree</dt><dd>B.E. Electronics &amp; Communication · Minor in EV Technology</dd></div>
+              <div><dt>Beyond tech</dt><dd>Photography · Drama · Videography · Guitar (learning)</dd></div>
+            </dl>
+          </div>
+        </div>
+
+        <div class="journey">
+          <div class="journey-col reveal">
+            <h3 class="mini-title">Experience</h3>
+            <article class="tl-item">
+              <span class="tl-meta">Summer internship</span>
+              <h4>ASIC Physical Design Intern · eInfochips</h4>
+              <p>
+                Worked through the RTL-to-layout flow on industry tools: logic synthesis with Synopsys Design
+                Compiler (SDC constraints, area / timing / power reports) and place-and-route with IC Compiler 2 on
+                Linux — including library and multi-voltage design-check debugging.
+              </p>
+            </article>
+          </div>
+          <div class="journey-col reveal">
+            <h3 class="mini-title">Education</h3>
+            <article class="tl-item">
+              <span class="tl-meta">Ongoing · CGPA 9.11</span>
+              <h4>B.E. Electronics &amp; Communication Engineering</h4>
+              <p>Vishwakarma Government Engineering College (VGEC), Chandkheda, Ahmedabad — Gujarat Technological University. Pursuing a Minor Degree in Electric Vehicle Technology alongside the B.E.</p>
+            </article>
+            <article class="tl-item">
+              <span class="tl-meta">Schooling</span>
+              <h4>Secondary &amp; Higher Secondary</h4>
+              <p>Divine Life School.</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SKILLS ============ -->
+    <section class="section alt" id="skills">
+      <div class="wrap">
+        <div class="sec-head reveal">
+          <span class="eyebrow">Skills</span>
+          <h2>Tools, methods and people skills.</h2>
+          <p class="lead">What I work with day to day — and what I'm actively growing into.</p>
+        </div>
+        <div class="skills-grid" id="skillsGrid"></div>
+      </div>
+    </section>
+
+    <!-- ============ ACHIEVEMENTS ============ -->
+    <section class="section" id="achievements">
+      <div class="wrap">
+        <div class="sec-head reveal">
+          <span class="eyebrow">Achievements</span>
+          <h2>Recognition, in the lab and beyond.</h2>
+        </div>
+        <div class="ach-grid" id="achGrid"></div>
+      </div>
+    </section>
+
+    <!-- ============ PROJECTS ============ -->
+    <section class="section alt" id="projects">
+      <div class="wrap">
+        <div class="sec-head reveal">
+          <span class="eyebrow">Projects</span>
+          <h2>Things I've designed and built.</h2>
+          <p class="lead">Select a project for the full story — goals, stack, what I built, and what I learned.</p>
+        </div>
+        <div class="filters reveal" id="projectFilters" role="group" aria-label="Filter projects"></div>
+        <div class="project-grid" id="projectGrid"></div>
+      </div>
+    </section>
+
+    <!-- ============ CERTIFICATIONS ============ -->
+    <section class="section" id="certifications">
+      <div class="wrap">
+        <div class="sec-head reveal">
+          <span class="eyebrow">Certifications</span>
+          <h2>Credentials &amp; coursework.</h2>
+        </div>
+        <div class="cert-grid" id="certGrid"></div>
+      </div>
+    </section>
+
+    <!-- ============ PUBLICATIONS ============ -->
+    <section class="section alt" id="publications">
+      <div class="wrap">
+        <div class="sec-head reveal">
+          <span class="eyebrow">Publications &amp; patents</span>
+          <h2>Work that's been written down.</h2>
+        </div>
+        <div class="pub-list" id="pubList"></div>
+      </div>
+    </section>
+
+    <!-- ============ BLOGS ============ -->
+    <section class="section" id="blogs">
+      <div class="wrap">
+        <div class="sec-head reveal">
+          <span class="eyebrow">Blogs</span>
+          <h2>Notes from the bench.</h2>
+        </div>
+        <div class="blog-grid" id="blogGrid"></div>
+      </div>
+    </section>
+
+    <!-- ============ CONTACT ============ -->
+    <section class="section alt" id="contact">
+      <div class="wrap">
+        <div class="sec-head reveal">
+          <span class="eyebrow">Contact</span>
+          <h2>Let's build something together.</h2>
+          <p class="lead">Hiring for an ASIC or physical design role, or have a project in mind? Send a message — I read everything.</p>
+        </div>
+
+        <div class="contact-grid">
+          <div class="contact-info reveal">
+            <a class="c-row" id="emailLink" href="mailto:hitarthhitu27@gmail.com">
+              <svg class="i" aria-hidden="true"><use href="#i-mail"/></svg>
+              <span><small>Email</small>hitarthhitu27@gmail.com</span>
+            </a>
+            <a class="c-row" href="https://www.linkedin.com/in/shah-hitarth2" target="_blank" rel="noopener">
+              <svg class="i" aria-hidden="true"><use href="#i-linkedin"/></svg>
+              <span><small>LinkedIn</small>linkedin.com/in/shah-hitarth2</span>
+            </a>
+            <a class="c-row" href="https://github.com/Suizaka" target="_blank" rel="noopener">
+              <svg class="i" aria-hidden="true"><use href="#i-github"/></svg>
+              <span><small>GitHub</small>github.com/Suizaka</span>
+            </a>
+            <div class="c-row static">
+              <svg class="i" aria-hidden="true"><use href="#i-pin"/></svg>
+              <span><small>Location</small>Ahmedabad, Gujarat, India</span>
+            </div>
+          </div>
+
+          <form class="card contact-form reveal" id="contactForm" novalidate>
+            <div class="field">
+              <label for="cName">Name</label>
+              <input id="cName" name="name" type="text" autocomplete="name" required placeholder="Your name">
+            </div>
+            <div class="field">
+              <label for="cEmail">Email</label>
+              <input id="cEmail" name="email" type="email" autocomplete="email" required placeholder="you@company.com">
+            </div>
+            <div class="field">
+              <label for="cMsg">Message</label>
+              <textarea id="cMsg" name="message" rows="5" required placeholder="How can I help?"></textarea>
+            </div>
+            <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+            <button class="btn btn-primary" type="submit" id="sendBtn">Send message <svg class="i" aria-hidden="true"><use href="#i-arrow"/></svg></button>
+            <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap foot">
+      <p>© <span id="year"></span> Hitarth Shah. Designed &amp; built by hand.</p>
+      <div class="socials">
+        <a href="https://github.com/Suizaka" target="_blank" rel="noopener" aria-label="GitHub"><svg class="i"><use href="#i-github"/></svg></a>
+        <a href="https://www.linkedin.com/in/shah-hitarth2" target="_blank" rel="noopener" aria-label="LinkedIn"><svg class="i"><use href="#i-linkedin"/></svg></a>
+        <a href="https://www.instagram.com/hitarth_279" target="_blank" rel="noopener" aria-label="Instagram"><svg class="i"><use href="#i-instagram"/></svg></a>
+        <a href="#top" aria-label="Back to top"><svg class="i" style="transform:rotate(-45deg)"><use href="#i-arrow"/></svg></a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Project detail modal -->
+  <dialog class="modal" id="projectModal" aria-labelledby="pmTitle">
+    <button class="icon-btn modal-close" id="pmClose" type="button" aria-label="Close project details"><svg class="i"><use href="#i-close"/></svg></button>
+    <div id="pmBody"></div>
+  </dialog>
+
+  <noscript><p style="text-align:center;padding:24px">Please enable JavaScript to see projects, skills and achievements.</p></noscript>
+
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
