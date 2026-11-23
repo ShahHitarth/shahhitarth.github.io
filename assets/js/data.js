@@ -10,12 +10,12 @@ window.SITE_DATA = {
   config: {
     // 1) Contact form: get a free key at https://web3forms.com (enter your email, key arrives instantly).
     //    Until you paste it, the form falls back to opening the visitor's email app.
-    web3formsKey: "79602669-37a0-47cf-8ee4-d3a35ee1a595",
+    web3formsKey: "YOUR_ACCESS_KEY_HERE",
     contactEmail: "hitarthhitu27@gmail.com",
 
     // 2) Résumé: put your PDF in /assets/ and set the path, e.g. "assets/Hitarth-Shah-Resume.pdf".
     //    While this is empty the Résumé button stays hidden.
-    resume: "assets/Hitarth-Shah-Resume.pdf"
+    resume: ""
   },
 
   /* ---------------- SKILLS ---------------- */
