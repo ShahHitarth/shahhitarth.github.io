@@ -8,62 +8,77 @@
 window.SITE_DATA = {
 
   config: {
-    // 1) Contact form: get a free key at https://web3forms.com (enter your email, key arrives instantly).
-    //    Until you paste it, the form falls back to opening the visitor's email app.
-    web3formsKey: "YOUR_ACCESS_KEY_HERE",
-    contactEmail: "hitarthhitu27@gmail.com",
-
-    // 2) Résumé: put your PDF in /assets/ and set the path, e.g. "assets/Hitarth-Shah-Resume.pdf".
-    //    While this is empty the Résumé button stays hidden.
-    resume: ""
+    // Contact form (Web3Forms). The access key is meant to be public; it can only send mail to your inbox.
+    web3formsKey: "79602669-37a0-47cf-8ee4-d3a35ee1a595",
+    contactEmail: "hitarths27@gmail.com",
+    // Résumé PDF (button appears in the hero when this is set)
+    resume: "assets/Hitarth-Shah-Resume.pdf"
   },
 
-  /* ---------------- SKILLS ---------------- */
+  /* ---------------- CURRENT FOCUS (About section) ---------------- */
+  focus: [
+    "Open-source RTL-to-GDS flow: Yosys · OpenLane · SkyWater 130 nm",
+    "Building a Verilog RTL project portfolio",
+    "Embedded & IoT systems"
+  ],
+
+  /* ---------------- SKILLS ----------------
+     items can be plain text, or { name, note } to show a small caption. */
   skills: {
     technical: [
-      { group: "Digital design & VLSI", items: ["Verilog HDL", "RTL design", "Logic synthesis", "Place & route (physical design)", "SDC constraints", "Static timing analysis", "DFT & scan chains"] },
-      { group: "EDA tools", items: ["Synopsys Design Compiler", "Synopsys IC Compiler 2", "Ansys HFSS", "Linux (RHEL / WSL2)"] },
+      { group: "Digital design & VLSI", items: ["Verilog HDL", "RTL design", "Logic synthesis", "Waveform analysis"] },
+      { group: "EDA tools", items: [
+        { name: "EasyEDA", note: "schematics & PCB layout" },
+        { name: "Ansys HFSS", note: "basics · antenna simulation" }
+      ] },
       { group: "Embedded & IoT", items: ["Embedded C", "ATmega32", "ESP32", "Arduino", "Sensor interfacing", "Serial communication", "Sinric Pro · Google Home", "MIT App Inventor"] },
-      { group: "Hardware & web", items: ["Analog circuits (op-amps)", "Soldering & prototyping", "Git & GitHub", "HTML · CSS · JavaScript"] },
+      { group: "Hardware & web", items: ["Analog circuits (op-amps)", "Soldering & prototyping", "HTML · CSS"] },
       { group: "Currently exploring", soft: true, items: ["OpenLane / LibreLane", "Yosys", "OpenSTA", "SkyWater 130 nm PDK"] }
     ],
-    nontechnical: ["Teamwork & collaboration", "Presenting to experts", "Technical writing", "Editing & storytelling", "Videography & video editing", "Photography", "Working to deadlines", "Quick learner"],
-    // Edit proficiency to match reality, and add any other languages you speak.
+    nontechnical: ["Teamwork & Collaboration", "Technical Communication", "Presentation & Public Speaking", "Technical Writing", "Creative Problem Solving", "Project Coordination"],
+    creative: ["Photography", "Videography & video editing", "Reels & short-form content", "Acting & stage performance", "Script writing"],
     languages: [
-      { name: "English", level: "Professional" },
-      { name: "Hindi", level: "Professional · research paper author" }
+      { name: "English", level: "Listen · understand · speak · write" },
+      { name: "Hindi", level: "Understand · speak · basic writing" },
+      { name: "Gujarati", level: "Mother tongue · understand · speak · some writing" }
     ]
   },
 
-  /* ---------------- ACHIEVEMENTS ---------------- */
+  /* ---------------- ACHIEVEMENTS (oldest first) ---------------- */
   achievements: {
     technical: [
-      { label: "NASA Space Apps Challenge 2023", title: "4th rank among all participants", text: "First hackathon. Built the Fire Safe Now interface and pitch in 48 hours." },
-      { label: "SAC ISRO × GTU", title: "Selected for the NSTC nanosatellite team", text: "Chosen for the GTU × SAC ISRO Space Technology Club's nanosatellite team, working in collaboration with SAC ISRO." },
-      { label: "SAC ISRO", title: "Presented the SATYA payload concept to ISRO scientists", text: "An acoustic time-of-flight approach to orbital-debris characterisation — received positive feedback from the scientists." },
-      { label: "SAC ISRO Hindi Technical Seminar", title: "Research paper selected, presented and published", text: "Translated the SATYA proposal into a Hindi paper, presented it at the seminar (9–10 July) and published in the proceedings." },
-      { label: "Patent", title: "Filed an Indian patent application — “Living Logic”", text: "A deterministic, distributed embedded control system built around an ATmega32 + ESP32 dual-controller architecture." },
-      { label: "Academics", title: "CGPA 9.11 at VGEC", text: "Consistent top-tier performance in the B.E. Electronics & Communication programme (GTU)." }
+      { label: "Oct 2023 · NASA International Space Apps Challenge", title: "Secured 4th rank with “Fire Safe Now”", text: "My first hackathon. Designed and built the multi-page website, pitch deck and live demo for a community-based fire detection and response system, in 48 hours." },
+      { label: "Sep 2025 · Smart India Hackathon", title: "Took part in the VGEC internal round", text: "Participated in the college's internal hackathon for Smart India Hackathon 2025." },
+      { label: "Oct 2025 · IEEE CASS SBC, CHARUSAT", title: "Cleared all rounds of iChip 3.0 — Code2Chip FPGA Innovation Hackathon", text: "An FPGA-focused innovation hackathon held as part of CASS Convergence 2025." },
+      { label: "2026 · GTU × SAC ISRO", title: "Presented SATYA to ISRO scientists; selected for the Nano-Satellite Technical Club (Payload Design)", text: "Joined the GTU × ISRO nanosatellite-making workshop and presented SATYA, an in-situ orbital-debris characterisation payload concept, which the ISRO scientists appreciated. Afterwards I was selected for the club's Payload Design section." },
+      { label: "Jul 2026 · GTU × eInfochips", title: "Completed the “RTL to GDS-II” industry internship", text: "Two weeks at the GTU Centre of Excellence in Semiconductor Chip Design with eInfochips, covering the full path from digital design to silicon." },
+      { label: "Jul 2026 · Indian Patent Office", title: "Patent application filed and published: “Living Logic”", text: "Documented my Design Engineering project as a patent application for a deterministic distributed control system (No. 202621081255 A). Filed 1 July, published 21 August 2026." },
+      { label: "Jul 2026 · SAC ISRO Hindi Technical Seminar", title: "SATYA paper: 2nd best paper of the room, and published", text: "Turned the SATYA concept into a Hindi research paper, presented it at the seminar and was named 2nd best paper of the room. It is published in the seminar proceedings." },
+      { label: "2026 · Design Office, India", title: "Antenna design application accepted", text: "My Antenna & Wave Propagation project impressed our faculty, and together with my partner we filed a design application for it, which has been accepted." }
     ],
     nontechnical: [
-      { label: "Founder", title: "Ameliorate Yourself", text: "A platform of quizzes and brain games that makes learning engaging." },
-      { label: "Lead editor", title: "ECE Department Newsletter", text: "Led editing of the department's official newsletter at VGEC." },
-      { label: "Media team", title: "Campus Connect", text: "Produced news reels and creative reels for the campus media team." },
-      { label: "Contributor", title: "Mission English", text: "Student-driven initiative to improve English fluency among peers." },
-      { label: "Clubs", title: "Photography & Drama clubs", text: "Active member of both clubs." }
+      { label: "Since first year · Boson Institute for Physics", title: "Physics tutor", text: "Teaching physics at a tuition institute alongside my degree." },
+      { label: "VGEC clubs", title: "Coordinator of the Advanature and Drama clubs", text: "Also a very active member of the Photography Club, where I coordinated a Photo Walk and a photography workshop." },
+      { label: "Advanature Club", title: "Won Meghdhanush twice", text: "Won the drawing competition as a first-year student, and again in second year while also serving as its coordinator." },
+      { label: "Drama Club · 2024", title: "National-level one-act competition and campus productions", text: "Performed at the 1st Sanjeev Kumar Open One Act Competition in Surat. On campus I acted in, and helped write, a street play (Nukkad Natak) for the Voter Awareness Program, and took part in the Teacher's Day drama and a skit competition." },
+      { label: "Mission English", title: "Participant, then lecturer", text: "Joined the student-driven English-fluency initiative and later took sessions for my peers." },
+      { label: "Campus Connect · Media Team", title: "Made news reels", text: "For a month or two, produced reels on the latest technical and non-technical news." },
+      { label: "ECE Department", title: "Newsletter coordinator", text: "Coordinated and produced three editions of the department newsletter, published on the college website." }
     ]
   },
 
   /* ---------------- PROJECTS ----------------
      category: "digital" | "embedded" | "rf" | "web"
      images: files in assets/img/ (first one is the card cover). Leave [] for a placeholder.
-     links: [{ label, url, type: "code" | "video" | "live" | "download" }]  (leave url "" to skip)
+     videos: [{ label, id }]  — YouTube video IDs (unlisted is fine), shown inside the project pop-up.
+     links: [{ label, url, type: "code" | "video" | "live" | "download" }]
+     hidden: true  — keeps a project in this file but off the site. Set to false (or delete the line) to show it.
   ------------------------------------------- */
   categories: [
     { id: "all", label: "All" },
-    { id: "digital", label: "VLSI & RTL" },
+    { id: "digital", label: "VLSI & RTL", soon: "RTL and digital-design projects are in progress and will be added here soon." },
     { id: "embedded", label: "Embedded & IoT" },
-    { id: "rf", label: "RF & Antenna" },
+    { id: "rf", label: "RF & Antenna", soon: "Antenna and RF projects are in progress and will be added here soon." },
     { id: "web", label: "Web" }
   ],
 
@@ -75,8 +90,9 @@ window.SITE_DATA = {
       category: "embedded",
       badge: "Patent filed",
       images: ["pr6.webp"],
-      summary: "A solar-powered smart-home prototype with manual, Bluetooth, Google Home and sensor control — built on a deterministic, distributed control architecture now covered by an Indian patent filing.",
-      overview: "Developed for the Design Engineering subject in second year, Living Logic simulates a smart home on a cardboard model. An ESP32 coordinates several control paths — physical buttons, a custom Bluetooth app, cloud voice control and sensor automation — with clear priority rules so the system always behaves predictably. The underlying dual-controller (ATmega32 + ESP32) architecture is the subject of an Indian patent application.",
+      videos: [{ label: "Demo", id: "hASzJ1ynFu0" }],
+      summary: "A solar-powered smart-home prototype with manual, Bluetooth, Google Home and sensor control, built on a deterministic control architecture covered by an Indian patent application.",
+      overview: "Developed for the Design Engineering subject in second year, Living Logic simulates a smart home on a cardboard model. An ESP32 coordinates several control paths (physical buttons, a custom Bluetooth app, cloud voice control and sensor automation) with clear priority rules so the system always behaves predictably. The underlying executor-and-supervisor control architecture is the subject of an Indian patent application.",
       highlights: [
         "Bluetooth control through an HC-05 module and a custom MIT App Inventor app",
         "4-channel relay module switching 12 LEDs; 4 manual push buttons with top priority",
@@ -85,7 +101,7 @@ window.SITE_DATA = {
         "Flame sensor that triggers a red LED and buzzer alert",
         "Solar panel + TP4056 charger + Li-ion cell + boost converter as the power path"
       ],
-      stack: ["ESP32", "ATmega32", "HC-05", "Sinric Pro", "MIT App Inventor", "Arduino IDE", "Relays", "PIR / sound / flame sensors"],
+      stack: ["ESP32", "HC-05", "Sinric Pro", "MIT App Inventor", "Arduino IDE", "Relays", "PIR / sound / flame sensors"],
       learned: [
         "Arbitrating several control sources with predictable priority",
         "Designing a solar-charged power path for embedded loads",
@@ -97,44 +113,15 @@ window.SITE_DATA = {
       ]
     },
     {
-      id: "verilog-rtl",
-      title: "Verilog RTL Designs — ALU & UART",
-      subtitle: "Digital design portfolio",
-      category: "digital",
-      badge: "",
-      images: [],
-      summary: "Synthesizable digital building blocks written in Verilog — an ALU and a UART — documented as a clean GitHub portfolio.",
-      overview: "A growing collection of RTL designs that I use to sharpen my front-end design skills alongside my physical-design internship work. Current projects are an arithmetic-logic unit and a UART; more are being added. In parallel, I'm exploring an open-source ASIC flow (Yosys, OpenSTA, OpenLane / LibreLane, SkyWater 130 nm) to complement the commercial tools I used in industry.",
-      highlights: ["ALU in Verilog", "UART in Verilog", "Structured and documented for GitHub / LinkedIn", "Open-source RTL-to-GDS toolchain being explored in parallel"],
-      stack: ["Verilog HDL", "RTL design", "Yosys", "OpenSTA", "OpenLane / LibreLane", "SkyWater 130 nm"],
-      learned: [],
-      links: [
-        { label: "GitHub", url: "https://github.com/Suizaka", type: "code" }
-      ]
-    },
-    {
-      id: "fractal-antenna",
-      title: "Fractal Microstrip Patch Antenna",
-      subtitle: "Three-phase design study in HFSS",
-      category: "rf",
-      badge: "",
-      images: [],
-      summary: "A 2.4 GHz antenna study progressing from a rectangular patch to a Minkowski fractal patch and finally a CSRR-loaded fractal patch on FR4.",
-      overview: "A structured simulation study in Ansys HFSS: start with a baseline rectangular patch, then apply Minkowski fractal geometry, and finally load the design with complementary split-ring resonators (CSRR) — each phase targeting 2.4 GHz on an FR4 substrate.",
-      highlights: ["Phase 1 — rectangular patch baseline", "Phase 2 — Minkowski fractal patch", "Phase 3 — CSRR-loaded fractal patch", "Target: 2.4 GHz on FR4 substrate"],
-      stack: ["Ansys HFSS", "Microstrip patch antennas", "Fractal geometry", "CSRR", "FR4"],
-      learned: [],
-      links: []
-    },
-    {
       id: "fire-safe-now",
       title: "Fire Safe Now",
       subtitle: "NASA Space Apps Challenge 2023 · 4th rank",
       category: "web",
       badge: "4th rank",
       images: ["pr2.webp", "pr21.webp"],
+      videos: [{ label: "Demo", id: "LAzZS_ViuHc" }],
       summary: "A community-based fire detection and response website with live maps, built in 48 hours at NASA's Space Apps hackathon.",
-      overview: "SpaceCyborgs was our team's entry to the NASA Space Apps Challenge 2023, tackling fire detection and response with machine learning, mapping and alerts. I designed and built the entire multi-page frontend and delivered the pitch deck and demo; teammates built the detection model, Firebase backend and mapping. As a first hackathon with a two-day deadline, the backend and frontend weren't fully integrated — but the team still placed 4th.",
+      overview: "SpaceCyborgs was our team's entry to the NASA Space Apps Challenge 2023, tackling fire detection and response with machine learning, mapping and alerts. I designed and built the entire multi-page frontend and delivered the pitch deck and demo; teammates built the detection model, Firebase backend and mapping. As a first hackathon with a two-day deadline, the backend and frontend weren't fully integrated, but the team still placed 4th.",
       highlights: [
         "Custom multi-page website with section transitions — Home, Mission, Explore, Fire-Detection, About, Login (my part)",
         "ML-based fire detection from images and video, with Firebase for threat coordinates (teammates)",
@@ -149,43 +136,31 @@ window.SITE_DATA = {
         "Adapting quickly under real-world pressure"
       ],
       links: [
-        { label: "Live website", url: "https://suizaka.github.io/SpaceCyborgs/", type: "live" }
+        { label: "Live website", url: "https://shahhitarth.github.io/SpaceCyborgs/", type: "live" }
       ]
-    },
-    {
-      id: "carelink",
-      title: "CareLink",
-      subtitle: "Health monitoring & medicine dispenser",
-      category: "embedded",
-      badge: "",
-      images: [],
-      summary: "An embedded / IoT health-monitoring system paired with an automated medicine dispenser.",
-      overview: "CareLink combines patient health monitoring with an automated medicine-dispensing mechanism, built on the embedded and IoT stack I use across my hardware projects.",
-      highlights: ["Health monitoring", "Automated medicine dispenser"],
-      stack: ["Embedded C", "ESP32", "IoT"],
-      learned: [],
-      links: []
     },
     {
       id: "passcode-system",
       title: "ATmega32 Passcode System",
-      subtitle: "Embedded access control in C",
+      subtitle: "Embedded access control in C, on a bare IC",
       category: "embedded",
-      badge: "",
+      badge: "Bare-IC build",
       images: ["pr5.webp", "pr51.webp"],
-      summary: "A keypad-and-LCD security system with LED indicators, a buzzer and a timed lock-out after three failed attempts.",
-      overview: "Built for the Microprocessor & Microcontroller subject in 4th semester, this team project mimics a real access-control module: users enter a code on a 4×4 keypad, a 16×2 LCD guides them, and the system grants or denies access with LED and buzzer feedback. All logic — keypad scanning, debouncing, attempt counting and timed alerts — is written in structured, interrupt-free C.",
+      videos: [{ label: "Demo", id: "N0Fmha79CGY" }],
+      summary: "A keypad-and-LCD security system built around a bare ATmega32 IC, with LED indicators, a buzzer and a timed lock-out after three failed attempts.",
+      overview: "Built for the Microprocessor & Microcontroller subject in 4th semester, this team project mimics a real access-control module. The whole system is built on a bare ATmega32 IC, with no Arduino or ready-made microcontroller board. Users enter a code on a 4×4 keypad, a 16×2 LCD guides them, and the system grants or denies access with LED and buzzer feedback. All logic (keypad scanning, debouncing, attempt counting and timed alerts) is written in structured, interrupt-free C.",
       highlights: [
+        "Built on a bare ATmega32 IC rather than a development board",
         "4×4 matrix keypad input with debouncing",
         "16×2 LCD prompts — “Enter the Pass”, “Access Granted”, “Access Denied”",
         "Green / red LED status and buzzer alert",
         "Locks the system for 5 seconds after 3 failed attempts"
       ],
-      stack: ["ATmega32", "Embedded C", "Atmel Studio", "4×4 keypad", "16×2 LCD", "LEDs & buzzer"],
+      stack: ["ATmega32 (bare IC)", "Embedded C", "Atmel Studio", "4×4 keypad", "16×2 LCD", "LEDs & buzzer"],
       learned: [
+        "Wiring and programming a microcontroller IC from scratch, without a dev board",
         "Interfacing LCD, keypad, LEDs and buzzer with the ATmega32",
-        "Structured embedded C and timed outputs",
-        "Practical problem-solving on real hardware"
+        "Structured embedded C and timed outputs"
       ],
       links: [
         { label: "Source code", url: "assets/code/passcode-atmega32.c", type: "code" }
@@ -198,6 +173,7 @@ window.SITE_DATA = {
       category: "embedded",
       badge: "",
       images: ["pr1.webp", "intro.webp"],
+      videos: [{ label: "Demo", id: "oiQjUIo2ZLU" }],
       summary: "A mini radar that sweeps an ultrasonic sensor on a servo and draws a live radar display on the PC.",
       overview: "A first-semester college project: an Arduino rotates a servo carrying an HC-SR04 ultrasonic sensor, sends angle and distance over serial, and a Processing sketch renders a real-time radar interface.",
       highlights: ["Live object detection up to 40 cm", "Servo sweep from 15° to 165°", "Real-time radar-style UI in Processing", "Smooth Arduino-to-PC serial communication"],
@@ -208,7 +184,6 @@ window.SITE_DATA = {
         "Debugging synchronisation issues between Arduino and Processing"
       ],
       links: [
-        { label: "Demo video", url: "https://youtu.be/SvLObGL-5ZY", type: "video" },
         { label: "Arduino code", url: "assets/code/radar-arduino.ino", type: "code" },
         { label: "Processing code", url: "assets/code/radar-processing.pde", type: "code" }
       ]
@@ -220,8 +195,9 @@ window.SITE_DATA = {
       category: "embedded",
       badge: "",
       images: ["pr4.webp", "pr43.webp"],
+      videos: [{ label: "Differentiator", id: "TFoOkbEmfRE" }, { label: "Integrator", id: "k5pC7aVL6HE" }],
       summary: "A dual-function analog kit built on zero PCB with custom BNC and banana connectors, housed in a wooden box.",
-      overview: "An academic electronics project demonstrating integration and differentiation with the 741 op-amp. Everything was made by hand — the circuit soldered on zero PCB, the wooden enclosure, labelled panel connectors, and custom BNC-to-BNC and banana-to-banana cables — so it can be used safely and quickly in the lab.",
+      overview: "An academic electronics project demonstrating integration and differentiation with the 741 op-amp. Everything was made by hand: the circuit soldered on zero PCB, the wooden enclosure, labelled panel connectors, and custom BNC-to-BNC and banana-to-banana cables, so it can be used safely and quickly in the lab.",
       highlights: [
         "Integrator: square wave → triangle wave",
         "Differentiator: square wave → sharp spikes",
@@ -234,10 +210,7 @@ window.SITE_DATA = {
         "Building reusable, safe lab test equipment",
         "Debugging real-world electronics assembly"
       ],
-      links: [
-        { label: "Integrator demo", url: "https://youtu.be/1B4O5gy6A6U", type: "video" },
-        { label: "Differentiator demo", url: "https://youtu.be/yI0MYJCKlwk", type: "video" }
-      ]
+      links: []
     },
     {
       id: "obstacle-alert",
@@ -246,6 +219,7 @@ window.SITE_DATA = {
       category: "embedded",
       badge: "",
       images: ["pr3.webp", "pr32.webp"],
+      videos: [{ label: "Demo", id: "PX0wAxANSOw" }],
       summary: "An Arduino ultrasonic sensor that triggers a buzzer and LED when an object comes too close.",
       overview: "A first-semester project demonstrating proximity alerts: an HC-SR04 measures distance continuously, and if an object comes inside the unsafe range the Arduino sounds a buzzer and lights an LED.",
       highlights: ["Real-time distance measurement", "Buzzer and LED warning inside ~5 cm", "Low power, simple to assemble"],
@@ -256,41 +230,118 @@ window.SITE_DATA = {
         "Turning real-world input into useful output"
       ],
       links: [
-        { label: "Demo video", url: "https://youtu.be/pB49idXdPfY", type: "video" },
         { label: "Arduino code", url: "assets/code/obstacle-alert.ino", type: "code" }
       ]
+    },
+
+    /* ---- Hidden for now: set hidden to false when the details are ready ---- */
+    {
+      id: "verilog-rtl",
+      hidden: true,
+      title: "Verilog RTL Designs — ALU & UART",
+      subtitle: "Digital design portfolio",
+      category: "digital",
+      badge: "",
+      images: [],
+      summary: "Synthesizable digital building blocks written in Verilog — an ALU and a UART.",
+      overview: "A growing collection of RTL designs. Current projects are an arithmetic-logic unit and a UART; more are being added.",
+      highlights: ["ALU in Verilog", "UART in Verilog"],
+      stack: ["Verilog HDL", "RTL design"],
+      learned: [],
+      links: []
+    },
+    {
+      id: "fractal-antenna",
+      hidden: true,
+      title: "Fractal Microstrip Patch Antenna",
+      subtitle: "Three-phase design study in HFSS",
+      category: "rf",
+      badge: "",
+      images: [],
+      summary: "A 2.4 GHz antenna study progressing from a rectangular patch to a Minkowski fractal patch and finally a CSRR-loaded fractal patch on FR4.",
+      overview: "A structured simulation study in Ansys HFSS: start with a baseline rectangular patch, then apply Minkowski fractal geometry, and finally load the design with complementary split-ring resonators (CSRR), each phase targeting 2.4 GHz on an FR4 substrate.",
+      highlights: ["Phase 1 — rectangular patch baseline", "Phase 2 — Minkowski fractal patch", "Phase 3 — CSRR-loaded fractal patch", "Target: 2.4 GHz on FR4 substrate"],
+      stack: ["Ansys HFSS", "Microstrip patch antennas", "Fractal geometry", "CSRR", "FR4"],
+      learned: [],
+      links: []
+    },
+    {
+      id: "carelink",
+      hidden: true,
+      title: "CareLink",
+      subtitle: "Health monitoring & medicine dispenser",
+      category: "embedded",
+      badge: "",
+      images: [],
+      summary: "An embedded / IoT health-monitoring system paired with an automated medicine dispenser.",
+      overview: "CareLink combines patient health monitoring with an automated medicine-dispensing mechanism.",
+      highlights: ["Health monitoring", "Automated medicine dispenser"],
+      stack: ["Embedded C", "ESP32", "IoT"],
+      learned: [],
+      links: []
     }
   ],
 
   /* ---------------- CERTIFICATIONS ----------------
-     Add yours like this (copy the block, one per certificate):
-     { title: "Certificate name", issuer: "Coursera / NPTEL / …", date: "Mar 2026", description: "One line on what it covers.", url: "https://link-to-certificate" }
+     group: "tech" | "beyond"      image: file in assets/certs/
   ------------------------------------------------- */
-  certifications: [],
+  certGroups: [
+    { id: "all", label: "All" },
+    { id: "tech", label: "Technical" },
+    { id: "beyond", label: "Beyond the lab" }
+  ],
 
-  /* ---------------- PUBLICATIONS & PATENTS ---------------- */
+  certifications: [
+    { group: "tech", title: "RTL to GDS-II: From Digital Design to Silicon Chip", issuer: "GTU × eInfochips", date: "Jul 2026", description: "Two-week industry-based summer internship.", image: "internship-gtu-einfochips.webp" },
+    { group: "tech", title: "Hindi Technical Seminar 2026", issuer: "Space Applications Centre, ISRO", date: "Jul 2026", description: "Presented the SATYA research paper.", image: "isro-hindi-seminar.webp" },
+    { group: "tech", title: "VLSI Interconnects", issuer: "NPTEL · IIT Kharagpur", date: "Jul–Sep 2026", description: "8-week course, 3 credits recommended.", image: "nptel-vlsi-interconnects.webp" },
+    { group: "tech", title: "VLSI for Beginners", issuer: "NIELIT Calicut (MeitY)", date: "Feb 2026", description: "CMOS technology and digital IC design fundamentals.", image: "nielit-vlsi-beginners.webp" },
+    { group: "tech", title: "Workshop on Semiconductor Design & Applications", issuer: "GUJCOST × Indus University", date: "Jan 2026", description: "Two-day national workshop.", image: "gujcost-semiconductor.webp" },
+    { group: "tech", title: "VLSI System-on-Chip Design — Overview", issuer: "Maven Silicon", date: "Jan 2026", description: "RTL design, CMOS fundamentals and SoC concepts.", image: "maven-silicon-soc.webp" },
+    { group: "tech", title: "iChip 3.0 — Code2Chip FPGA Innovation Hackathon", issuer: "IEEE CASS SBC · CHARUSAT", date: "Oct 2025", description: "Secured all rounds.", image: "ichip-3-hackathon.webp" },
+    { group: "tech", title: "Smart India Hackathon 2025 — Internal Round", issuer: "Vishwakarma Government Engineering College", date: "Sep 2025", description: "Certificate of appreciation.", image: "sih-internal-2025.webp" },
+    { group: "tech", title: "Patent Your Innovation — Awareness Workshop", issuer: "VGEC E-Cell × Institution's Innovation Council", date: "Jul 2025", description: "Workshop on protecting engineering innovations.", image: "patent-awareness-ecell.webp" },
+    { group: "tech", title: "Galactic Problem Solver", issuer: "NASA International Space Apps Challenge", date: "Oct 2023", description: "Recognition for solving challenges on Earth and in space.", image: "nasa-space-apps-2023.webp" },
+
+    { group: "beyond", title: "Media Team Appreciation", issuer: "VGEC Media Cell · Campus Connect", date: "Jan 2026", description: "Reels and technical content, 2024–25.", image: "media-team-appreciation.webp" },
+    { group: "beyond", title: "Videography Course", issuer: "Paraatpar Institute of Media Studies", date: "", description: "Completed with a skill assessment.", image: "videography-workshop.webp" },
+    { group: "beyond", title: "1st Sanjeev Kumar Open One Act Competition", issuer: "Sanjeev Kumar Foundation · SBV, Surat", date: "May–Jun 2024", description: "National-level drama competition.", image: "sanjeev-kumar-one-act.webp" },
+    { group: "beyond", title: "Mission English", issuer: "Vishwakarma Government Engineering College", date: "Jul–Oct 2024", description: "Outstanding contribution and performance.", image: "mission-english.webp" },
+    { group: "beyond", title: "Voter Awareness Street Play", issuer: "VGEC Drama Team", date: "Apr 2024", description: "Lok Sabha Election 2024 awareness.", image: "voter-awareness-street-play.webp" }
+  ],
+
+  /* ---------------- PUBLICATIONS & PATENTS ----------------
+     images: files in assets/docs/ (first is the thumbnail; all open in the viewer)
+  ---------------------------------------------------------- */
   publications: [
     {
       type: "Research paper · Hindi",
-      // TODO: replace the title below with the exact title of your paper.
-      title: "SATYA: Orbital Debris Characterisation using Acoustic Time-of-Flight",
-      venue: "SAC ISRO Hindi Technical Seminar · 9–10 July · Published in the seminar proceedings",
+      title: "SATYA: Active Payload based on Time-of-Flight and Dual-Parameter Analysis for In-Situ Characterisation of Orbital Micro-Debris",
+      native: "सत्या (SATYA): कक्षीय सूक्ष्म-मलबे के इन-सिटू लक्षण वर्णन हेतु टाइम-ऑफ-फ्लाइट एवं ड्युअल-पैरामीटर विश्लेषण आधारित सक्रिय नीतभार",
+      venue: "Hindi Technical Seminar 2026, Space Applications Centre (SAC), ISRO, Ahmedabad · 9–10 July 2026 · Proceedings, p. 303 · ISBN 978-93-82760-58-0",
       authors: "Hitarth Shah, Prof. Gautam D. Makwana",
-      url: ""
+      badge: "2nd best paper of the room",
+      images: ["satya-paper-1.webp", "satya-paper-2.webp", "satya-cover.webp"],
+      links: [{ label: "Read the paper (PDF)", url: "assets/docs/SATYA-paper.pdf" }]
     },
     {
-      type: "Patent · India",
-      title: "Living Logic — a deterministic distributed embedded control system",
-      venue: "Indian patent application · Filed · ATmega32 + ESP32 dual-controller architecture",
-      authors: "",
-      url: ""
+      type: "Patent application · India",
+      title: "Living Logic: A Deterministic Distributed Control System for Smart Automation",
+      venue: "Application No. 202621081255 A · Filed 1 July 2026 · Published 21 August 2026",
+      authors: "Shahid S. Modasiya, Hitarth D. Shah, Mahi A. Thakor, Riddhi H. Patel",
+      badge: "Published",
+      images: ["living-logic-patent.webp"],
+      links: [{ label: "Publication (PDF)", url: "assets/docs/Living-Logic-patent.pdf" }]
     },
     {
-      type: "Editorial",
-      title: "ECE Department Newsletter (July–December 2025)",
-      venue: "Vishwakarma Government Engineering College · Lead editor",
-      authors: "",
-      url: ""
+      type: "Design application · India",
+      // TODO: replace with the exact title of the design as filed.
+      title: "Fractal Microstrip Patch Antenna — Design Application",
+      venue: "Design Application No. 515851-001 · Controller General of Patents, Designs & Trade Marks",
+      authors: "Dr. Balvant J. Makwana, Dr. Shahid S. Modasiya, Khushi Dipesh Shah, Hitarth Shah",
+      badge: "Application accepted",
+      images: ["antenna-design-status.webp"],
+      links: []
     }
   ],
 

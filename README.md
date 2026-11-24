@@ -13,21 +13,18 @@ assets/code/          downloadable project code (credentials removed)
 
 ## Adding content (no coding needed)
 
-Open `assets/js/data.js`. Each list is plain text — copy an existing block, paste it, edit the words.
+Open `assets/js/data.js`. Each list is plain text: copy an existing block, paste it, edit the words.
 
-- **Certificates** — fill `certifications: []` using the example in the comment above it.
-- **Blogs** — fill `blogs: []` the same way. Link `url` to Medium / LinkedIn / Dev.to / a page on this site.
-- **Publications** — edit/add entries in `publications`. Replace the SATYA paper title with the exact one.
-- **Projects** — copy any project object. Put photos in `assets/img/` (convert to `.webp`, ≤1400 px wide).
-- **Résumé** — drop a PDF in `assets/` and set `config.resume` to its path; the button appears automatically.
+- **Projects** — copy any project object. Photos go in `assets/img/` (convert to `.webp`, 1400 px wide or less). Add `videos: [{ label: "Demo", id: "YOUTUBE_ID" }]` to show a player in the pop-up (the ID is the part after `youtu.be/`, without `?si=...`). Projects marked `hidden: true` (Verilog, Fractal Antenna, CareLink) stay in the file but are off the site: set `hidden` to `false` once their details are ready.
+- **Certificates** — add an object to `certifications`. Put the image in `assets/certs/` as `.webp` (a PDF certificate can be converted by screenshotting it). Use `group: "tech"` or `"beyond"`.
+- **Publications & patents** — edit/add entries in `publications`; images go in `assets/docs/`, PDFs too.
+- **Blogs** — fill `blogs: []` using the example in the comment above it. Link `url` to Medium / LinkedIn / Dev.to / a page on this site.
+- **Current focus** — the three lines in `focus` appear on the About section; change them whenever your focus changes.
+- **Résumé** — replace `assets/Hitarth-Shah-Resume.pdf` with the new file (keep the name).
 
 ## Contact form (free, no server)
 
-1. Go to https://web3forms.com, enter your email, and copy the access key they send.
-2. Paste it into `config.web3formsKey` in `assets/js/data.js`.
-3. Done — messages arrive in your inbox. (Free tier: 250 messages/month.)
-
-Until a key is set, the form opens the visitor's email app instead, so it never fails silently.
+Already wired to Web3Forms with your access key in `data.js` (`config.web3formsKey`). Messages arrive in your inbox (free tier: 250 a month). The first time you test it, Web3Forms may ask you to confirm your email address.
 
 ## Putting it online for free (GitHub Pages)
 
