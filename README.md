@@ -15,7 +15,7 @@ assets/code/          downloadable project code (credentials removed)
 
 Open `assets/js/data.js`. Each list is plain text: copy an existing block, paste it, edit the words.
 
-- **Projects** — copy any project object. Photos go in `assets/img/` (convert to `.webp`, 1400 px wide or less). Add `videos: [{ label: "Demo", id: "YOUTUBE_ID" }]` to show a player in the pop-up (the ID is the part after `youtu.be/`, without `?si=...`). Projects marked `hidden: true` (Verilog, Fractal Antenna, CareLink) stay in the file but are off the site: set `hidden` to `false` once their details are ready.
+- **Projects** — copy any project object. Photos go in `assets/img/` (convert to `.webp`, 1400 px wide or less). Add `videos: [{ label: "Demo", id: "YOUTUBE_ID" }]` to show a player in the pop-up (the ID is the part after `youtu.be/`, without `?si=...`). Projects marked `hidden: true` (Verilog) stay in the file but are off the site: set `hidden` to `false` once their details are ready.
 - **Certificates** — add an object to `certifications`. Put the image in `assets/certs/` as `.webp` (a PDF certificate can be converted by screenshotting it). Use `group: "tech"` or `"beyond"`.
 - **Publications & patents** — edit/add entries in `publications`; images go in `assets/docs/`, PDFs too.
 - **Blogs** — fill `blogs: []` using the example in the comment above it. Link `url` to Medium / LinkedIn / Dev.to / a page on this site.
@@ -40,3 +40,12 @@ Already wired to Web3Forms with your access key in `data.js` (`config.web3formsK
 4. Link to the site from your LinkedIn, GitHub profile and résumé — that speeds up discovery.
 
 If your final address isn't `https://shahhitarth.github.io/`, update it in `index.html` (canonical + social tags), `sitemap.xml` and `robots.txt`.
+
+
+## Where to put project links
+
+In `assets/js/data.js`, find the project (CareLink, Bus Port Management System) and fill `links: [{ label: "GitHub", url: "https://github.com/...", type: "code" }]` (`type` can be code, live, video, download). A YouTube demo goes in `videos: [{ label: "Demo", id: "YOUTUBE_ID" }]`.
+
+## Certificates
+
+`featured: true` certificates show first; the rest sit behind the "More certificates" button.

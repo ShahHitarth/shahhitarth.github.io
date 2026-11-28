@@ -166,7 +166,7 @@
     currentProject = p;
     lastFocus = document.activeElement;
     var videos = (p.videos || []).filter(function (v) { return ytId(v.id); });
-    var gallery = (p.images || []).slice(0, 2).map(function (src) {
+    var gallery = (p.images || []).slice(0, 3).map(function (src) {
       return '<img src="assets/img/' + esc(src) + '" alt="' + esc(p.title) + ' photo" loading="lazy">';
     }).join('');
     var list = function (arr) { return '<ul>' + arr.map(function (x) { return '<li>' + esc(x) + '</li>'; }).join('') + '</ul>'; };
@@ -188,8 +188,9 @@
         '<p class="pm-sub">' + esc(p.subtitle) + '</p>' +
         (actions ? '<div class="pm-links top">' + actions + '</div>' : '') +
         '<div class="pm-cols"><div>' +
-          '<h5>Overview</h5><p class="pm-block">' + esc(p.overview) + '</p>' +
-          (p.highlights && p.highlights.length ? '<h5>What it does</h5>' + list(p.highlights) : '') +
+          '<h5>Overview</h5>' + String(p.overview).split(/\n\n+/).map(function (t) { return '<p class="pm-block">' + esc(t) + '</p>'; }).join('') +
+          (p.highlights && p.highlights.length ? '<h5>' + esc(p.highlightsTitle || 'What it does') + '</h5>' + list(p.highlights) : '') +
+          (p.sections || []).map(function (sec) { return '<h5>' + esc(sec.title) + '</h5>' + list(sec.items); }).join('') +
         '</div><div>' +
           '<h5>Stack</h5><div class="tags pm-block">' + p.stack.map(function (t) { return '<span class="tag">' + esc(t) + '</span>'; }).join('') + '</div>' +
           (p.learned && p.learned.length ? '<h5>What I learned</h5>' + list(p.learned) : '') +
@@ -249,17 +250,32 @@
       el.innerHTML = '<div class="empty reveal"><strong>Certificates coming soon</strong><p>Courses and credentials will be listed here as I add them.</p></div>';
       return;
     }
+    var hasMore = list.some(function (c) { return !c.featured; });
     el.innerHTML = list.map(function (c, i) {
-      return '<article class="card cert reveal" data-group="' + esc(c.group) + '">' +
+      return '<article class="card cert reveal' + (c.featured || !hasMore ? '' : ' is-more') + '" data-group="' + esc(c.group) + '"' + (c.featured || !hasMore ? '' : ' hidden') + '>' +
         '<button class="cert-thumb" type="button" data-i="' + i + '" aria-label="View certificate: ' + esc(c.title) + '">' +
           '<img src="assets/certs/' + esc(c.image) + '" alt="" loading="lazy">' +
           '<span class="cert-zoom">' + icon('arrow') + ' View</span></button>' +
         '<div class="cert-body"><span class="meta">' + esc(c.issuer) + (c.date ? ' · ' + esc(c.date) : '') + '</span>' +
         '<h3>' + esc(c.title) + '</h3>' + (c.description ? '<p>' + esc(c.description) + '</p>' : '') + '</div></article>';
     }).join('');
-    filterButtons(fbox, D.certGroups, function (g) {
-      $$('.cert', el).forEach(function (c) { c.hidden = !(g === 'all' || c.getAttribute('data-group') === g); });
-    });
+    var showAll = false, group = 'all', moreBtn = $('#certMore');
+    function applyCerts() {
+      $$('.cert', el).forEach(function (c) {
+        var inGroup = group === 'all' || c.getAttribute('data-group') === group;
+        var shown = c.classList.contains('is-more') ? showAll : true;
+        c.hidden = !(inGroup && shown);
+      });
+      if (moreBtn) {
+        var hiddenCount = list.filter(function (c) { return !c.featured && (group === 'all' || c.group === group); }).length;
+        moreBtn.hidden = !hasMore || (!showAll && !hiddenCount) || (showAll && !hiddenCount);
+        moreBtn.setAttribute('aria-expanded', showAll ? 'true' : 'false');
+        moreBtn.textContent = showAll ? 'Show fewer certificates' : 'More certificates (' + hiddenCount + ')';
+      }
+    }
+    filterButtons(fbox, D.certGroups, function (g) { group = g; applyCerts(); });
+    if (moreBtn) moreBtn.addEventListener('click', function () { showAll = !showAll; applyCerts(); });
+    applyCerts();
     el.addEventListener('click', function (e) {
       var b = e.target.closest('.cert-thumb'); if (!b) return;
       var c = list[+b.getAttribute('data-i')];
@@ -274,7 +290,7 @@
       el.innerHTML = '<div class="empty reveal"><strong>Publications coming soon</strong></div>';
       return;
     }
-    el.innerHTML = list.map(function (p, i) {
+    var card = function (p, i) {
       var thumb = p.images && p.images.length
         ? '<button class="pub-thumb" type="button" data-i="' + i + '" aria-label="View images: ' + esc(p.title) + '"><img src="assets/docs/' + esc(p.images[0]) + '" alt="" loading="lazy"><span class="cert-zoom">' + icon('arrow') + ' View</span></button>'
         : '';
@@ -286,6 +302,16 @@
         '<h3>' + esc(p.title) + '</h3>' + (p.native ? '<p class="native" lang="hi">' + esc(p.native) + '</p>' : '') +
         '<p>' + esc(p.venue) + '</p>' + (p.authors ? '<p class="by">' + esc(p.authors) + '</p>' : '') +
         (links ? '<div class="pm-links tight">' + links + '</div>' : '') + '</div></article>';
+    };
+    var kinds = [
+      { id: 'paper', title: 'Research papers', note: 'Presented and published work' },
+      { id: 'patent', title: 'Patents & designs', note: 'Filed, published and registered intellectual property' }
+    ];
+    el.innerHTML = kinds.map(function (k) {
+      var items = list.map(function (p, i) { return { p: p, i: i }; }).filter(function (x) { return (x.p.kind || 'paper') === k.id; });
+      if (!items.length) return '';
+      return '<div class="pub-group reveal" data-kind="' + k.id + '"><div class="pub-group-head"><h3 class="pub-group-title">' + k.title + ' <span class="pub-count">' + items.length + '</span></h3><span class="pub-group-note">' + k.note + '</span></div>' +
+        '<div class="pub-stack">' + items.map(function (x) { return card(x.p, x.i); }).join('') + '</div></div>';
     }).join('');
     el.addEventListener('click', function (e) {
       var b = e.target.closest('.pub-thumb'); if (!b) return;

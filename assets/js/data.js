@@ -29,7 +29,8 @@ window.SITE_DATA = {
       { group: "Digital design & VLSI", items: ["Verilog HDL", "RTL design", "Logic synthesis", "Waveform analysis"] },
       { group: "EDA tools", items: [
         { name: "EasyEDA", note: "schematics & PCB layout" },
-        { name: "Ansys HFSS", note: "basics · antenna simulation" }
+        { name: "Ansys HFSS", note: "basics · antenna simulation" },
+        { name: "EDA Playground", note: "online HDL simulation" }
       ] },
       { group: "Embedded & IoT", items: ["Embedded C", "ATmega32", "ESP32", "Arduino", "Sensor interfacing", "Serial communication", "Sinric Pro · Google Home", "MIT App Inventor"] },
       { group: "Hardware & web", items: ["Analog circuits (op-amps)", "Soldering & prototyping", "HTML · CSS"] },
@@ -54,7 +55,7 @@ window.SITE_DATA = {
       { label: "Jul 2026 · GTU × eInfochips", title: "Completed the “RTL to GDS-II” industry internship", text: "Two weeks at the GTU Centre of Excellence in Semiconductor Chip Design with eInfochips, covering the full path from digital design to silicon." },
       { label: "Jul 2026 · Indian Patent Office", title: "Patent application filed and published: “Living Logic”", text: "Documented my Design Engineering project as a patent application for a deterministic distributed control system (No. 202621081255 A). Filed 1 July, published 21 August 2026." },
       { label: "Jul 2026 · SAC ISRO Hindi Technical Seminar", title: "SATYA paper: 2nd best paper of the room, and published", text: "Turned the SATYA concept into a Hindi research paper, presented it at the seminar and was named 2nd best paper of the room. It is published in the seminar proceedings." },
-      { label: "2026 · Design Office, India", title: "Antenna design application accepted", text: "My Antenna & Wave Propagation project impressed our faculty, and together with my partner we filed a design application for it, which has been accepted." }
+      { label: "2026 · Design Office, India", title: "Antenna design officially registered for 10 years", text: "My Antenna & Wave Propagation project impressed our faculty, and together with my partner we filed a design application for it. The design is now registered and the Certificate of Design has been generated, valid for 10 years." }
     ],
     nontechnical: [
       { label: "Since first year · Boson Institute for Physics", title: "Physics tutor", text: "Teaching physics at a tuition institute alongside my degree." },
@@ -252,12 +253,11 @@ window.SITE_DATA = {
     },
     {
       id: "fractal-antenna",
-      hidden: true,
       title: "Fractal Microstrip Patch Antenna",
       subtitle: "Three-phase design study in HFSS",
       category: "rf",
-      badge: "",
-      images: [],
+      badge: "Registered design",
+      images: ["antenna-design-status.webp"],
       summary: "A 2.4 GHz antenna study progressing from a rectangular patch to a Minkowski fractal patch and finally a CSRR-loaded fractal patch on FR4.",
       overview: "A structured simulation study in Ansys HFSS: start with a baseline rectangular patch, then apply Minkowski fractal geometry, and finally load the design with complementary split-ring resonators (CSRR), each phase targeting 2.4 GHz on an FR4 substrate.",
       highlights: ["Phase 1 — rectangular patch baseline", "Phase 2 — Minkowski fractal patch", "Phase 3 — CSRR-loaded fractal patch", "Target: 2.4 GHz on FR4 substrate"],
@@ -267,18 +267,62 @@ window.SITE_DATA = {
     },
     {
       id: "carelink",
-      hidden: true,
-      title: "CareLink",
-      subtitle: "Health monitoring & medicine dispenser",
+      title: "CareLink — A Smart Patient Support System",
+      subtitle: "Patient monitoring and automated medicine assistance",
       category: "embedded",
       badge: "",
-      images: [],
-      summary: "An embedded / IoT health-monitoring system paired with an automated medicine dispenser.",
-      overview: "CareLink combines patient health monitoring with an automated medicine-dispensing mechanism.",
-      highlights: ["Health monitoring", "Automated medicine dispenser"],
-      stack: ["Embedded C", "ESP32", "IoT"],
+      images: ["carelink-box.webp", "carelink-pcb.webp"],
+      videos: [],   // e.g. [{ label: "Demo", id: "YOUTUBE_ID" }]
+      summary: "An ESP32-based patient support system combining vital-sign monitoring, emergency assistance, and scheduled medicine dispensing.",
+      overview: "CareLink integrates a MAX30102 sensor for pulse-rate and SpO₂ monitoring, an OLED display for real-time readings, and an automated medicine dispenser controlled through scheduled reminders. The dispenser uses a servo mechanism and IR sensors to detect medicine collection, while audio prompts provide reminders and feedback. An SOS button adds an emergency-assistance feature.",
+      highlights: [
+        "Real-time pulse-rate and SpO₂ monitoring",
+        "Scheduled medicine dispensing",
+        "IR-based medicine collection detection",
+        "Audio reminders and status feedback",
+        "SOS emergency assistance",
+        "Bluetooth-based communication"
+      ],
+      highlightsTitle: "Highlights",
+      stack: ["ESP32", "Embedded C", "MAX30102", "OLED", "DS3231 RTC", "Servo Motor", "IR Sensors", "DFPlayer Mini", "Bluetooth"],
       learned: [],
-      links: []
+      links: []     // e.g. [{ label: "GitHub", url: "https://github.com/ShahHitarth/CareLink", type: "code" }]
+    },
+    {
+      id: "bus-port-management",
+      title: "Bus Port Management System",
+      subtitle: "AI/ML-Enabled IoT Smart Bus Management and Predictive Transportation",
+      category: "embedded",
+      badge: "",
+      images: ["busport-bus-unit.webp", "busport-dashboard-map.webp", "busport-dashboard-log.webp"],
+      videos: [],   // e.g. [{ label: "Demo", id: "YOUTUBE_ID" }]
+      summary: "An integrated smart transportation system combining IoT-based bus monitoring, machine-learning predictions, automated platform allocation and passenger information management.",
+      overview: "The system consists of two interconnected units: a bus-side monitoring unit and a bus-port management controller.\n\nThe bus-side ESP32 collects telemetry using two IR sensors for bidirectional passenger counting, a NEO-6M GPS module for live location tracking, an MPU6050 for driving-condition monitoring, a DS1307 RTC for time information and an RFID card for unique bus identification. The two IR sensors determine passenger entry and exit based on their triggering sequence. The collected telemetry is transmitted wirelessly to an ESP32-S3-based M5Stack AtomS3 controller at the bus port.\n\nAt the bus port, the AtomS3 uses an RFID reader to identify arriving buses and checks platform availability to automatically assign an empty station. An OLED provides local information, while an HC-05 Bluetooth module connects to a custom MIT App Inventor application for passenger announcements.\n\nA web-based dashboard integrates the system by displaying live bus locations on a map, speed, passenger count, multiple telemetry graphs and machine-learning predictions. It also supports manual passenger announcements and manual input-based execution of both ML models.",
+      highlights: [
+        "Live GPS-based bus tracking and telemetry monitoring",
+        "Bidirectional passenger counting using dual IR sensors",
+        "Driver-condition monitoring using MPU6050 acceleration features",
+        "RFID-based bus identification and arrival detection",
+        "Automatic allocation of available bus platforms",
+        "Wireless communication between bus-side and bus-port controllers",
+        "OLED-based local information display",
+        "Bluetooth passenger announcements through a custom mobile application",
+        "Live dashboard with map, speed, passenger count and parameter graphs",
+        "Travel-time prediction and driver-behaviour classification",
+        "Manual input and computation interface for both ML models",
+        "Manual passenger announcements through the dashboard"
+      ],
+      highlightsTitle: "Key features",
+      sections: [
+        { title: "Machine learning", items: [
+          "Driver-behaviour classification using engineered MPU6050 acceleration features, including three-axis acceleration measurements, mean and standard deviation",
+          "Reported driver-behaviour model test accuracy: 80.12%",
+          "Travel-time prediction model developed using transportation-related data"
+        ] }
+      ],
+      stack: ["ESP32", "ESP32-S3", "M5Stack AtomS3", "NEO-6M GPS", "MPU6050", "DS1307 RTC", "IR Sensors", "RFID", "HC-05 Bluetooth", "OLED", "Embedded C", "MIT App Inventor", "Python", "Machine Learning", "Backend Development", "Web Dashboard"],
+      learned: [],
+      links: []     // e.g. [{ label: "GitHub", url: "https://github.com/ShahHitarth/Bus-Port-Management", type: "code" }]
     }
   ],
 
@@ -291,23 +335,36 @@ window.SITE_DATA = {
     { id: "beyond", label: "Beyond the lab" }
   ],
 
+  /* featured: true  -> shown up front.  Others sit behind the "More certificates" button. */
   certifications: [
-    { group: "tech", title: "RTL to GDS-II: From Digital Design to Silicon Chip", issuer: "GTU × eInfochips", date: "Jul 2026", description: "Two-week industry-based summer internship.", image: "internship-gtu-einfochips.webp" },
-    { group: "tech", title: "Hindi Technical Seminar 2026", issuer: "Space Applications Centre, ISRO", date: "Jul 2026", description: "Presented the SATYA research paper.", image: "isro-hindi-seminar.webp" },
-    { group: "tech", title: "VLSI Interconnects", issuer: "NPTEL · IIT Kharagpur", date: "Jul–Sep 2026", description: "8-week course, 3 credits recommended.", image: "nptel-vlsi-interconnects.webp" },
-    { group: "tech", title: "VLSI for Beginners", issuer: "NIELIT Calicut (MeitY)", date: "Feb 2026", description: "CMOS technology and digital IC design fundamentals.", image: "nielit-vlsi-beginners.webp" },
-    { group: "tech", title: "Workshop on Semiconductor Design & Applications", issuer: "GUJCOST × Indus University", date: "Jan 2026", description: "Two-day national workshop.", image: "gujcost-semiconductor.webp" },
-    { group: "tech", title: "VLSI System-on-Chip Design — Overview", issuer: "Maven Silicon", date: "Jan 2026", description: "RTL design, CMOS fundamentals and SoC concepts.", image: "maven-silicon-soc.webp" },
-    { group: "tech", title: "iChip 3.0 — Code2Chip FPGA Innovation Hackathon", issuer: "IEEE CASS SBC · CHARUSAT", date: "Oct 2025", description: "Secured all rounds.", image: "ichip-3-hackathon.webp" },
-    { group: "tech", title: "Smart India Hackathon 2025 — Internal Round", issuer: "Vishwakarma Government Engineering College", date: "Sep 2025", description: "Certificate of appreciation.", image: "sih-internal-2025.webp" },
-    { group: "tech", title: "Patent Your Innovation — Awareness Workshop", issuer: "VGEC E-Cell × Institution's Innovation Council", date: "Jul 2025", description: "Workshop on protecting engineering innovations.", image: "patent-awareness-ecell.webp" },
-    { group: "tech", title: "Galactic Problem Solver", issuer: "NASA International Space Apps Challenge", date: "Oct 2023", description: "Recognition for solving challenges on Earth and in space.", image: "nasa-space-apps-2023.webp" },
+    { featured: true, group: "tech", title: "RTL to GDS-II: From Digital Design to Silicon Chip", issuer: "GTU × eInfochips", date: "Jul 2026", description: "Two-week industry-based summer internship.", image: "internship-gtu-einfochips.webp" },
+    { featured: true, group: "tech", title: "VLSI Design Flow: RTL to GDS", issuer: "NPTEL · IIIT Delhi", date: "Jul–Oct 2026", description: "12-week Elite course, 75% consolidated score.", image: "nptel-vlsi-rtl-to-gds.webp" },
+    { featured: true, group: "tech", title: "Hindi Technical Seminar 2026", issuer: "Space Applications Centre, ISRO", date: "Jul 2026", description: "Presented the SATYA research paper.", image: "isro-hindi-seminar.webp" },
+    { featured: true, group: "tech", title: "VLSI for Beginners", issuer: "NIELIT Calicut (MeitY)", date: "Feb 2026", description: "CMOS technology and digital IC design fundamentals.", image: "nielit-vlsi-beginners.webp" },
+    { featured: true, group: "tech", title: "Workshop on Semiconductor Design & Applications", issuer: "GUJCOST × Indus University", date: "Jan 2026", description: "Two-day national workshop.", image: "gujcost-semiconductor.webp" },
+    { featured: true, group: "tech", title: "VLSI System-on-Chip Design — Overview", issuer: "Maven Silicon", date: "Jan 2026", description: "RTL design, CMOS fundamentals and SoC concepts.", image: "maven-silicon-soc.webp" },
+    { featured: true, group: "tech", title: "iChip 3.0 — Code2Chip FPGA Innovation Hackathon", issuer: "IEEE CASS SBC · CHARUSAT", date: "Oct 2025", description: "Secured all rounds.", image: "ichip-3-hackathon.webp" },
+    { featured: true, group: "tech", title: "Smart India Hackathon 2025 — Internal Round", issuer: "Vishwakarma Government Engineering College", date: "Sep 2025", description: "Certificate of appreciation.", image: "sih-internal-2025.webp" },
+    { featured: true, group: "tech", title: "Patent Your Innovation — Awareness Workshop", issuer: "VGEC E-Cell × Institution's Innovation Council", date: "Jul 2025", description: "Workshop on protecting engineering innovations.", image: "patent-awareness-ecell.webp" },
+    { featured: true, group: "tech", title: "Galactic Problem Solver", issuer: "NASA International Space Apps Challenge", date: "Oct 2023", description: "Recognition for solving challenges on Earth and in space.", image: "nasa-space-apps-2023.webp" },
+    { featured: true, group: "beyond", title: "Brief Introduction to Psychology", issuer: "NPTEL · IIT Kanpur", date: "Jul–Aug 2026", description: "4-week Elite course, 75% consolidated score.", image: "nptel-psychology.webp" },
+    { featured: true, group: "beyond", title: "Videography Course", issuer: "Paraatpar Institute of Media Studies", date: "", description: "Completed with a skill assessment.", image: "videography-workshop.webp" },
+    { featured: true, group: "beyond", title: "1st Sanjeev Kumar Open One Act Competition", issuer: "Sanjeev Kumar Foundation · SBV, Surat", date: "May–Jun 2024", description: "National-level drama competition.", image: "sanjeev-kumar-one-act.webp" },
+    { featured: true, group: "beyond", title: "Voter Awareness Street Play", issuer: "VGEC Drama Team", date: "Apr 2024", description: "Lok Sabha Election 2024 awareness.", image: "voter-awareness-street-play.webp" },
 
+    /* ---- More certificates ---- */
+    { group: "tech", title: "VLSI Interconnects", issuer: "NPTEL · IIT Kharagpur", date: "Jul–Sep 2026", description: "8-week course, 3 credits recommended.", image: "nptel-vlsi-interconnects.webp" },
     { group: "beyond", title: "Media Team Appreciation", issuer: "VGEC Media Cell · Campus Connect", date: "Jan 2026", description: "Reels and technical content, 2024–25.", image: "media-team-appreciation.webp" },
-    { group: "beyond", title: "Videography Course", issuer: "Paraatpar Institute of Media Studies", date: "", description: "Completed with a skill assessment.", image: "videography-workshop.webp" },
-    { group: "beyond", title: "1st Sanjeev Kumar Open One Act Competition", issuer: "Sanjeev Kumar Foundation · SBV, Surat", date: "May–Jun 2024", description: "National-level drama competition.", image: "sanjeev-kumar-one-act.webp" },
     { group: "beyond", title: "Mission English", issuer: "Vishwakarma Government Engineering College", date: "Jul–Oct 2024", description: "Outstanding contribution and performance.", image: "mission-english.webp" },
-    { group: "beyond", title: "Voter Awareness Street Play", issuer: "VGEC Drama Team", date: "Apr 2024", description: "Lok Sabha Election 2024 awareness.", image: "voter-awareness-street-play.webp" }
+    { group: "beyond", title: "Skit Competition", issuer: "VGEC Drama Team", date: "Sep 2024", description: "Participation in the college skit competition.", image: "skit-competition.webp" },
+    { group: "beyond", title: "Teacher's Day Drama", issuer: "VGEC Drama Team", date: "Sep 2024", description: "A dramatic tribute to the teachers.", image: "teachers-day-drama.webp" },
+    { group: "beyond", title: "Nature's Canvas Workshop", issuer: "Skyblue Stationery Mart", date: "Jun 2024", description: "Outstanding performance in the drawing workshop.", image: "natures-canvas-workshop.webp" },
+    { group: "beyond", title: "Mobile Photography Workshop", issuer: "VGEC, Chandkheda", date: "Mar 2024", description: "Hands-on workshop on photography with a phone.", image: "mobile-photography-workshop.webp" },
+    { group: "beyond", title: "World Earth Day Quiz", issuer: "Indian Biodiversity Conservation Society", date: "Apr 2024", description: "Online quiz on World Earth Day.", image: "world-earth-day-quiz.webp" },
+    { group: "beyond", title: "Heritage Quiz", issuer: "MyGov · Archaeological Survey of India", date: "", description: "Certificate of participation.", image: "heritage-quiz.webp" },
+    { group: "beyond", title: "Quiz on India's Democracy", issuer: "MyGov · Government of India", date: "", description: "Certificate of appreciation.", image: "india-democracy-quiz.webp" },
+    { group: "beyond", title: "Pariksha Pe Charcha 2024 Quiz", issuer: "Ministry of Education · MyGov", date: "2024", description: "Certificate of participation.", image: "pariksha-pe-charcha-quiz.webp" },
+    { group: "beyond", title: "Sardar Unity Trinity Quiz", issuer: "MyGov", date: "", description: "Swabhimani Bharat quiz.", image: "sardar-unity-quiz.webp" }
   ],
 
   /* ---------------- PUBLICATIONS & PATENTS ----------------
@@ -315,6 +372,7 @@ window.SITE_DATA = {
   ---------------------------------------------------------- */
   publications: [
     {
+      kind: "paper",
       type: "Research paper · Hindi",
       title: "SATYA: Active Payload based on Time-of-Flight and Dual-Parameter Analysis for In-Situ Characterisation of Orbital Micro-Debris",
       native: "सत्या (SATYA): कक्षीय सूक्ष्म-मलबे के इन-सिटू लक्षण वर्णन हेतु टाइम-ऑफ-फ्लाइट एवं ड्युअल-पैरामीटर विश्लेषण आधारित सक्रिय नीतभार",
@@ -325,6 +383,7 @@ window.SITE_DATA = {
       links: [{ label: "Read the paper (PDF)", url: "assets/docs/SATYA-paper.pdf" }]
     },
     {
+      kind: "patent",
       type: "Patent application · India",
       title: "Living Logic: A Deterministic Distributed Control System for Smart Automation",
       venue: "Application No. 202621081255 A · Filed 1 July 2026 · Published 21 August 2026",
@@ -334,12 +393,13 @@ window.SITE_DATA = {
       links: [{ label: "Publication (PDF)", url: "assets/docs/Living-Logic-patent.pdf" }]
     },
     {
-      type: "Design application · India",
+      kind: "patent",
+      type: "Registered design · India",
       // TODO: replace with the exact title of the design as filed.
-      title: "Fractal Microstrip Patch Antenna — Design Application",
-      venue: "Design Application No. 515851-001 · Controller General of Patents, Designs & Trade Marks",
+      title: "Fractal Microstrip Patch Antenna — Design",
+      venue: "Design Application No. 515851-001 · Application accepted, Certificate of Design generated · Registered for 10 years · Office of the Controller General of Patents, Designs & Trade Marks",
       authors: "Dr. Balvant J. Makwana, Dr. Shahid S. Modasiya, Khushi Dipesh Shah, Hitarth Shah",
-      badge: "Application accepted",
+      badge: "Registered · 10 years",
       images: ["antenna-design-status.webp"],
       links: []
     }

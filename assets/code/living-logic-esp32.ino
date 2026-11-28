@@ -8,8 +8,8 @@
 #define WIFI_PASS "Password"
 
 // Sinric Pro Credentials
-#define APP_KEY     "YOUR_SINRIC_APP_KEY"
-#define APP_SECRET  "YOUR_SINRIC_APP_SECRET"
+#define APP_KEY     "Insert your Sinric key"
+#define APP_SECRET  "Insert your Sinric secret"
 #define DEVICE_ID_1 "YOUR_SINRIC_DEVICE_ID"
 #define DEVICE_ID_4 "YOUR_SINRIC_DEVICE_ID"
 

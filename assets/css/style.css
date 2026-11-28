@@ -484,3 +484,15 @@ dialog.viewer .modal-close { position: sticky; top: 14px; display: grid; margin:
 .v-imgs { display: grid; gap: 14px; padding: 18px 28px 28px; }
 .v-imgs a { display: block; border-radius: 12px; overflow: hidden; border: 1px solid var(--line); background: #fff; }
 .v-imgs img { width: 100%; height: auto; display: block; }
+
+/* ---------- Round 4: publication groups, certificate "More" ---------- */
+.pub-list { gap: 44px; }
+.pub-group-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 16px; padding-bottom: 12px; margin-bottom: 18px; border-bottom: 1px solid var(--line-strong); }
+.pub-group-title { font-family: var(--font-display); font-size: 1.5rem; display: flex; align-items: center; gap: 12px; }
+.pub-group-title::before { content: ""; width: 26px; height: 2px; background: var(--accent); display: inline-block; }
+.pub-count { font-family: var(--font-body, inherit); font-size: .72rem; letter-spacing: .1em; color: var(--accent); border: 1px solid var(--accent); border-radius: 999px; padding: 2px 9px; }
+.pub-group-note { color: var(--muted); font-size: .86rem; }
+.pub-stack { display: grid; gap: 18px; }
+.pub-group[data-kind="patent"] .pub-type { color: var(--accent-2, var(--accent)); }
+.cert-more-wrap { display: flex; justify-content: center; margin-top: 32px; }
+.cert-more-wrap[hidden], #certMore[hidden] { display: none; }
